@@ -1032,68 +1032,69 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo_img_width_int": 125,
+          "logo": "shopify:\/\/shop_images\/logo.jpg",
+          "logo_img_width_int": 145,
           "mobile_logo_img_width_int": 100,
           "logo_h1": true,
-          "enable_sticky": true,
+          "enable_sticky": false,
           "enable_transparent": false,
           "transparent_color": "#ffffff",
           "menu_linklist": "studioforty9",
           "menu_linklist_mobile": "",
-          "menu_layout": "underneath",
-          "nav_featured_link": "Sale",
+          "menu_layout": "inline-menu-center",
+          "nav_featured_link": "Offers",
           "enable_mobile_promo_carousel": true,
           "enable_nav_mob_products": false,
           "nav_mob_products_title": "Best Sellers",
           "nav_mob_products_collection": "",
           "enable_search": true,
-          "search_suggestions_title": "",
+          "search_suggestions_title": "What are you looking for?",
           "search_suggestions_menu": "",
           "icon_strategy": "icons_cart_search",
-          "cart_icon": "basket"
+          "cart_icon": "cart"
         }
       },
       "cross-page-promos": {
         "type": "cross-page-promos",
         "blocks": {
-          "1478526632862": {
-            "type": "icon",
-            "settings": {
-              "icon": "box",
-              "text": "Free delivery!",
-              "link_url": ""
-            }
-          },
           "1478527611164": {
             "type": "icon",
             "settings": {
-              "icon": "percent",
-              "text": "Student discount",
+              "icon": "box",
+              "text": "28 day returns",
               "link_url": ""
             }
           },
           "1478526645605": {
             "type": "icon",
             "settings": {
-              "icon": "map_pin",
-              "text": "Your nearest store",
+              "icon": "truck",
+              "text": "free delivery on orders over €40",
               "link_url": ""
             }
           },
           "1478526647261": {
             "type": "icon",
             "settings": {
-              "icon": "gift",
-              "text": "Gift cards",
+              "icon": "map_pin",
+              "text": "In Business Since 1977",
+              "link_url": ""
+            }
+          },
+          "icon_nFYwVn": {
+            "type": "icon",
+            "settings": {
+              "icon": "star",
+              "text": "Something",
               "link_url": ""
             }
           }
         },
         "block_order": [
-          "1478526632862",
           "1478527611164",
           "1478526645605",
-          "1478526647261"
+          "1478526647261",
+          "icon_nFYwVn"
         ],
         "settings": {
           "visibility": "all"
@@ -1137,8 +1138,8 @@
         ],
         "settings": {
           "lower_menu": "",
-          "show_payment_icons": true,
-          "show_country_selector": true,
+          "show_payment_icons": false,
+          "show_country_selector": false,
           "show_language_selector": true
         }
       },
@@ -1161,8 +1162,8 @@
           "message_font_size": 14,
           "show_social_icons": true,
           "menu": "",
-          "show_country_selector": true,
-          "show_language_selector": true
+          "show_country_selector": false,
+          "show_language_selector": false
         }
       },
       "store-messages": {
@@ -1180,7 +1181,7 @@
       "popup": {
         "type": "popup",
         "settings": {
-          "mode": "enabled",
+          "mode": "disabled",
           "popup_delay_seconds": 4,
           "popup_dismiss_for_days": 2,
           "position": "bottom-right",
