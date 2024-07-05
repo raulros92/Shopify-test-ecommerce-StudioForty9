@@ -1157,9 +1157,9 @@
           "1478526632861"
         ],
         "settings": {
-          "announcement_bar_col": "#001d7c",
+          "announcement_bar_col": "#004289",
           "announcement_text_col": "#ffffff",
-          "message_font_size": 14,
+          "message_font_size": 12,
           "show_social_icons": true,
           "menu": "",
           "show_country_selector": false,
