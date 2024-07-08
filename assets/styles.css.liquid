@@ -9,6 +9,30 @@
 
 :root {
 
+  /* Typography */
+  --font-2xs: 0.625rem 10px
+  --font-xs: 0.75rem 12px
+  --font-sm: 0.875rem 14px
+  --font-base: 1rem 16px
+  --font-lg: 1.125rem 18px
+  --font-xl: 1.5rem 24px
+
+  /* Colors */
+
+    /* Brand */
+    --c-primary: #70B72B;
+    --c-primary-variant: #5C9822;
+    --c-secondary: #004289;
+    --c-secondary-variant: #032C58;
+
+    /* Base */
+    --c-light: #F5F6F4;
+    --c-light-variant: #FFFFFF;
+    --c-gray: #666666;
+    --c-gray-variant: #666666;
+    --c-dark: #333333;
+    --c-dark-variant: #333333;
+
     /* Context */
     --c-info: #0468DB;
     --c-info-variant: #B4D2F4;
@@ -2116,7 +2140,6 @@ body {
     position: relative;
     margin-left: 20px;
     margin-right: 20px;
-    flex: 0 0 2px;
     order: 1;
   }
   .pageheader--layout-inline-menu-center .logo-area__left .show-search-link {
@@ -2125,13 +2148,9 @@ body {
   .pageheader--layout-inline-menu-center .logo-area__left__inner {
     position: absolute;
     left: 0;
-    min-height: 100%;
-    width: calc(100vw - 600px);
-    transform: translateX(-50%);
   }
   .pageheader--layout-inline-menu-center .logo-area__left__inner .navigation--left {
     left: 0;
-    width: 100%;
   }
   .pageheader--layout-inline-menu-center .logo-area__left__inner .navigation--left .navigation__tier-1-container {
     left: 0;
@@ -2148,7 +2167,6 @@ body {
   }
   .pageheader--layout-inline-menu-center .logo-area__right {
     flex: 1 0 0;
-    order: 2;
   }
   .pageheader--layout-inline-menu-center .logo-area__right .show-search-link {
     display: flex;
@@ -3469,12 +3487,11 @@ body:not(.reveal-mobile-nav) .mobile-navigation-drawer .mobile-navigation-drawer
 
 .main-search__form {
   position: relative;
-  margin: 20px auto;
-  max-width: 650px;
+  max-width: 880px;
+  margin-right: 44px;
+  font-family: 
 }
-.section-header .main-search__form {
-  margin: 60px auto;
-}
+
 @media (max-width: 999.98px) {
   .section-header .main-search__form {
     max-width: 450px;
@@ -3514,18 +3531,37 @@ body:not(.reveal-mobile-nav) .mobile-navigation-drawer .mobile-navigation-drawer
   background: rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   padding: 0;
+  margin-left: 44px;
 }
 
 input[type=text].main-search__input {
-  width: 100%;
-  background: transparent;
+  width: 980px;
+  background: var(--c-light);
   border: none;
   box-shadow: none;
-  color: inherit;
   font-size: inherit;
   line-height: 1.5em;
-  padding: 12px 12px 12px 24px;
+  padding: 12px 12px 12px 12px;
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
 }
+
+.main-search__input::placeholder {
+    color: var(--c-secondary);
+}
+
+.main-search__input::-webkit-input-placeholder {
+    color: var(--c-secondary);
+}
+
+.main-search__input:-moz-placeholder {
+    color: var(--c-secondary);
+}
+
+.main-search__input:-ms-input-placeholder {
+    color: var(--c-secondary);
+}
+
 @media (max-width: 767.98px) {
   input[type=text].main-search__input {
         font-size: max(16px, {{ font_size_base_int }}px);

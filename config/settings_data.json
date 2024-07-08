@@ -87,20 +87,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store</p>"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something</a> here</p>"
               }
             }
           },
-          "block_order": [
-            "1478526632860",
-            "1478526632861"
-          ],
+          "block_order": ["1478526632860", "1478526632861"],
           "settings": {
             "announcement_bar_col": "#f7f1f0",
             "announcement_text_col": "#212121",
@@ -195,11 +192,7 @@
               }
             }
           },
-          "block_order": [
-            "1601374680247",
-            "1601374650582",
-            "1601374580731"
-          ],
+          "block_order": ["1601374680247", "1601374650582", "1601374580731"],
           "settings": {
             "show_payment_icons": true
           }
@@ -304,20 +297,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store</p>"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something</a> here</p>"
               }
             }
           },
-          "block_order": [
-            "1478526632860",
-            "1478526632861"
-          ],
+          "block_order": ["1478526632860", "1478526632861"],
           "settings": {
             "announcement_bar_col": "#202020",
             "announcement_text_col": "#ffffff",
@@ -359,11 +349,7 @@
               }
             }
           },
-          "block_order": [
-            "1601308104445",
-            "1601308125690",
-            "1601308127822"
-          ],
+          "block_order": ["1601308104445", "1601308125690", "1601308127822"],
           "settings": {
             "head_not_home_only": false,
             "head_not_col_bg": "#f4f6f8",
@@ -444,11 +430,7 @@
               }
             }
           },
-          "block_order": [
-            "1601308717434",
-            "1601308671932",
-            "1601308656020"
-          ],
+          "block_order": ["1601308717434", "1601308671932", "1601308656020"],
           "settings": {
             "lower_menu": "",
             "show_payment_icons": true
@@ -633,11 +615,7 @@
               }
             }
           },
-          "block_order": [
-            "1601372812538",
-            "1601372709037",
-            "1601372771635"
-          ],
+          "block_order": ["1601372812538", "1601372709037", "1601372771635"],
           "settings": {
             "show_payment_icons": true
           }
@@ -648,20 +626,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store</p>"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something</a> here</p>"
               }
             }
           },
-          "block_order": [
-            "1478526632860",
-            "1478526632861"
-          ],
+          "block_order": ["1478526632860", "1478526632861"],
           "settings": {
             "announcement_bar_col": "#001d7c",
             "announcement_text_col": "#ffffff",
@@ -779,20 +754,17 @@
             "1478526632860": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Welcome to our store<\/p>"
+                "text": "<p>Welcome to our store</p>"
               }
             },
             "1478526632861": {
               "type": "announcement",
               "settings": {
-                "text": "<p>Announce <a href=\"#\">something<\/a> here<\/p>"
+                "text": "<p>Announce <a href=\"#\">something</a> here</p>"
               }
             }
           },
-          "block_order": [
-            "1478526632860",
-            "1478526632861"
-          ],
+          "block_order": ["1478526632860", "1478526632861"],
           "settings": {
             "announcement_bar_col": "#000000",
             "announcement_text_col": "#ffffff",
@@ -834,11 +806,7 @@
               }
             }
           },
-          "block_order": [
-            "1599495506123",
-            "1599495565638",
-            "1599495573176"
-          ],
+          "block_order": ["1599495506123", "1599495565638", "1599495573176"],
           "settings": {
             "head_not_home_only": false,
             "head_not_col_bg": "#f4f6f8",
@@ -919,11 +887,7 @@
               }
             }
           },
-          "block_order": [
-            "1599638662124",
-            "1599639374976",
-            "1599639431729"
-          ],
+          "block_order": ["1599638662124", "1599639374976", "1599639431729"],
           "settings": {
             "lower_menu": "",
             "show_payment_icons": true
@@ -961,7 +925,7 @@
     "head_bg_col": "#ffffff",
     "head_txt_col": "#202223",
     "head_nav_div_col": "#e2e2e2",
-    "font_col_nav": "#6d7175",
+    "font_col_nav": "#333333",
     "font_col_nav_hov": "#202223",
     "panel_nav_bg": "#ffffff",
     "nav_featured_col": "#df5641",
@@ -1000,11 +964,11 @@
     "type_heading_font": "ibm_plex_sans_n4",
     "capitalize_headings": true,
     "type_base_font": "ibm_plex_sans_n4",
-    "type_nav_font": "ibm_plex_sans_n4",
+    "type_nav_font": "ibm_plex_sans_n7",
     "type_logo_font": "ibm_plex_sans_n4",
     "font_size_heading_int": 28,
     "font_size_base_int": 15,
-    "font_size_nav_int": 14,
+    "font_size_nav_int": 16,
     "font_size_logo_int": 28,
     "button_style": "caps",
     "button_shape": "slightlyrounded",
@@ -1032,7 +996,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo.jpg",
+          "logo": "shopify://shop_images/logo.jpg",
           "logo_img_width_int": 145,
           "mobile_logo_img_width_int": 100,
           "logo_h1": true,
@@ -1107,7 +1071,7 @@
             "type": "text",
             "settings": {
               "title": "Talk about your store",
-              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>",
+              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
               "image_width": 55,
               "show_social_icons": true,
               "soc_icons_large": true
@@ -1124,18 +1088,14 @@
             "type": "newsletter",
             "settings": {
               "title": "Newsletter",
-              "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
+              "text": "<p>Sign up for exclusive offers, original stories, events and more.</p>",
               "button_style": "primary",
               "show_social_icons": true,
               "soc_icons_large": false
             }
           }
         },
-        "block_order": [
-          "1601372812538",
-          "1601372709037",
-          "1601372771635"
-        ],
+        "block_order": ["1601372812538", "1601372709037", "1601372771635"],
         "settings": {
           "lower_menu": "",
           "show_payment_icons": false,
@@ -1149,13 +1109,11 @@
           "1478526632861": {
             "type": "announcement",
             "settings": {
-              "text": "<p>Order Now For Next Day Delivery <a href=\"#\">Learn More<\/a><\/p>"
+              "text": "<p>Order Now For Next Day Delivery <a href=\"#\">Learn More</a></p>"
             }
           }
         },
-        "block_order": [
-          "1478526632861"
-        ],
+        "block_order": ["1478526632861"],
         "settings": {
           "announcement_bar_col": "#004289",
           "announcement_text_col": "#ffffff",
@@ -1186,14 +1144,12 @@
           "popup_dismiss_for_days": 2,
           "position": "bottom-right",
           "title": "Sign up and save",
-          "text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.<\/p>",
+          "text": "<p>Entice customers to sign up for your mailing list with discounts or exclusive offers.</p>",
           "show_newsletter": true,
           "show_social_icons": true
         }
       }
     },
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   }
 }

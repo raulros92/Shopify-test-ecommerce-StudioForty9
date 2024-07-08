@@ -68,13 +68,18 @@
               , input_prefix: 'annbar' %}
           </div>
         {% endif %}
-        <div class="close-icon">
+        <div
+          class="close-icon"
+          id="close-announcement-bar"
+          style="cursor: pointer;">
           {%- render 'svg-close' -%}
         </div>
       </div>
     </div>
   </div>
 {%- endif -%}
+
+<script src="{{ 'announcement-bar.js' | asset_url }}" defer="defer"></script>
 
 
 {% schema %}

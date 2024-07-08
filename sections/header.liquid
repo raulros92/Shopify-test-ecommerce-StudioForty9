@@ -81,93 +81,47 @@
                 </span>
               </a>
             {% endif %}
-            {% if section.settings.menu_layout contains 'inline' %}
-              <div
-                class="navigation navigation--left"
-                role="navigation"
-                aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
-                <div class="navigation__tier-1-container">
-                  <ul class="navigation__tier-1">
-                    {% for link in linklists[section.settings.menu_linklist].links %}
-                      {%- liquid
-                        assign has_dropdown = false
-                        if link.links != blank
-                          assign has_dropdown = true
-                        endif
-                        assign use_columns = false
-                        if link.levels >= 2
-                          assign use_columns = true
-                        else
-                          assign link_title_sanitised = link.title | downcase | strip
-                          for block in section.blocks
-                            assign dropdown_link_title_sanitised = block.settings.dropdown_link_title | downcase | strip
-                            if dropdown_link_title_sanitised == link_title_sanitised
-                              assign use_columns = true
-                              assign has_dropdown = true
-                            endif
-                          endfor
-                        endif
-                      -%}
-                      <li class="navigation__item{% if has_dropdown %} navigation__item--with-children {% if use_columns %}navigation__item--with-mega-menu{% else %}navigation__item--with-small-menu{% endif %}{% endif %}{% if featured_links contains link.title %} featured-link{% endif %}{% if link.active %} navigation__item--active{% endif %}">
-                        <a
-                          href="{{ link.url }}"
-                          class="navigation__link"
-                          {% if has_dropdown %}
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                          aria-controls="NavigationTier2-{{ forloop.index }}"
-                          {% endif %}>
-                          {{- link.title | escape -}}
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-            {% endif %}
           </div>
         </div>
 
-        <div class="logo-area__middle logo-area__middle--logo-{% if section.settings.logo != blank %}image{% else %}text{% endif %}">
-          <div class="logo-area__middle__inner">
-            <div class="logo">
-              {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
-                <h1 class="logo__h1">
-              {%- endif -%}
+        <div class="logo-area__middle__inner">
+          <div class="logo">
+            {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
+              <h1 class="logo__h1">
+            {%- endif -%}
 
-              <a
-                class="logo__link"
-                href="{{ routes.root_url }}"
-                title="{{ shop.name }}">
-                {%- if section.settings.logo != blank -%}
-                  {%- capture img_size -%}{{ section.settings.logo_img_width_int | times: 2 }}x{%- endcapture -%}
+            <a
+              class="logo__link"
+              href="{{ routes.root_url }}"
+              title="{{ shop.name }}">
+              {%- if section.settings.logo != blank -%}
+                {%- capture img_size -%}{{ section.settings.logo_img_width_int | times: 2 }}x{%- endcapture -%}
+                <img
+                  class="logo__image"
+                  src="{{ section.settings.logo | img_url: img_size }}"
+                  alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+                  itemprop="logo"
+                  width="{{ section.settings.logo.width }}"
+                  height="{{ section.settings.logo.height }}" />
+
+                {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
                   <img
-                    class="logo__image"
-                    src="{{ section.settings.logo | img_url: img_size }}"
-                    alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
-                    itemprop="logo"
-                    width="{{ section.settings.logo.width }}"
-                    height="{{ section.settings.logo.height }}" />
-
-                  {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
-                    <img
-                      class="logo__image-transparent"
-                      src="{{ section.settings.transparent_logo | img_url: img_size }}"
-                      alt="{{ section.settings.transparent_logo.alt | escape }}"
-                      width="{{ section.settings.transparent_logo.width }}"
-                      height="{{ section.settings.transparent_logo.height }}"
-                      aria-hidden="true" />
-                  {%- endif -%}
-
-                {%- else -%}
-                  <span class="logotext">{{ shop.name }}</span>
+                    class="logo__image-transparent"
+                    src="{{ section.settings.transparent_logo | img_url: img_size }}"
+                    alt="{{ section.settings.transparent_logo.alt | escape }}"
+                    width="{{ section.settings.transparent_logo.width }}"
+                    height="{{ section.settings.transparent_logo.height }}"
+                    aria-hidden="true" />
                 {%- endif -%}
-              </a>
 
-              {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
-                </h1>
+              {%- else -%}
+                <span class="logotext">{{ shop.name }}</span>
               {%- endif -%}
-            </div>
+            </a>
+
+            {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
+              </h1>
+            {%- endif -%}
           </div>
         </div>
 
@@ -192,56 +146,6 @@
                 </a>
               {% endif %}
             {% endif %}
-            {% if section.settings.enable_search %}
-              <a class="show-search-link" href="{{ routes.search_url }}">
-                <span class="show-search-link__text{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
-                  {{- 'layout.search.open' | t -}}
-                </span>
-                <span class="show-search-link__icon">
-                  {%- render 'svg-search' -%}
-                </span>
-              </a>
-            {% endif %}
-            <a href="{{ routes.cart_url }}" class="cart-link">
-              <span class="cart-link__label{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
-                {{- 'layout.header.cart' | t | escape -}}
-              </span>
-              <span class="cart-link__icon">
-                {%- if section.settings.cart_icon == 'basket' -%}
-                  {%- render 'svg-basket' -%}
-                {%- elsif section.settings.cart_icon == 'bag' -%}
-                  {%- render 'svg-bag' -%}
-                {%- else -%}
-                  {%- render 'svg-cart' -%}
-                {%- endif -%}
-                {%- if cart.item_count > 0 -%}
-                  <span class="cart-link__count">{{ cart.item_count }}</span>
-                {%- endif -%}
-              </span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {%- if section.settings.enable_search -%}
-        {%- liquid
-          assign show_search_suggestions = false
-          if section.settings.search_suggestions_title != blank or section.settings.search_suggestions_menu != blank
-            assign show_search_suggestions = true
-          endif
-        -%}
-        <div
-          id="main-search"
-          class="main-search {% if show_search_suggestions %}main-search--with-suggestions{% endif %}"
-          data-live-search="{{ settings.enable_live_search }}"
-          data-live-search-price="{{ settings.live_search_show_price }}"
-          data-live-search-vendor="{{ settings.live_search_show_vendor }}"
-          data-live-search-meta="{{ settings.live_search_search_meta }}"
-          data-per-row-mob="{{ settings.prod_thumb_mob_per_row }}">
-
-          <div class="main-search__container container">
-            <button class="main-search__close button notabutton" aria-label="{{ 'layout.search.close' | t | escape }}">{% render 'svg-x' %}</button>
-
             <form
               class="main-search__form"
               action="{{ routes.search_url }}"
@@ -269,6 +173,91 @@
                 type="submit"
                 aria-label="{{ 'layout.header.search_submit' | t }}">{% render 'svg-search' %}</button>
             </form>
+
+            <a href="{{ routes.cart_url }}" class="cart-link">
+              <span class="cart-link__label{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
+                {{- 'layout.header.cart' | t | escape -}}
+              </span>
+              <span class="cart-link__icon">
+                {%- if section.settings.cart_icon == 'basket' -%}
+                  {%- render 'svg-basket' -%}
+                {%- elsif section.settings.cart_icon == 'bag' -%}
+                  {%- render 'svg-bag' -%}
+                {%- else -%}
+                  {%- render 'svg-cart' -%}
+                {%- endif -%}
+                {%- if cart.item_count > 0 -%}
+                  <span class="cart-link__count">{{ cart.item_count }}</span>
+                {%- endif -%}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.menu_layout contains 'inline' %}
+        <div
+          class="navigation navigation--left"
+          role="navigation"
+          aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
+          <div class="navigation__tier-1-container">
+            <ul class="navigation__tier-1">
+              {% for link in linklists[section.settings.menu_linklist].links %}
+                {%- liquid
+                  assign has_dropdown = false
+                  if link.links != blank
+                    assign has_dropdown = true
+                  endif
+                  assign use_columns = false
+                  if link.levels >= 2
+                    assign use_columns = true
+                  else
+                    assign link_title_sanitised = link.title | downcase | strip
+                    for block in section.blocks
+                      assign dropdown_link_title_sanitised = block.settings.dropdown_link_title | downcase | strip
+                      if dropdown_link_title_sanitised == link_title_sanitised
+                        assign use_columns = true
+                        assign has_dropdown = true
+                      endif
+                    endfor
+                  endif
+                -%}
+                <li class="navigation__item{% if has_dropdown %} navigation__item--with-children {% if use_columns %}navigation__item--with-mega-menu{% else %}navigation__item--with-small-menu{% endif %}{% endif %}{% if featured_links contains link.title %} featured-link{% endif %}{% if link.active %} navigation__item--active{% endif %}">
+                  <a
+                    href="{{ link.url }}"
+                    class="navigation__link"
+                    {% if has_dropdown %}
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    aria-controls="NavigationTier2-{{ forloop.index }}"
+                    {% endif %}>
+                    {{- link.title | escape -}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+
+      {%- if section.settings.enable_search -%}
+        {%- liquid
+          assign show_search_suggestions = false
+          if section.settings.search_suggestions_title != blank or section.settings.search_suggestions_menu != blank
+            assign show_search_suggestions = true
+          endif
+        -%}
+        <div
+          id="main-search"
+          class="main-search {% if show_search_suggestions %}main-search--with-suggestions{% endif %}"
+          data-live-search="{{ settings.enable_live_search }}"
+          data-live-search-price="{{ settings.live_search_show_price }}"
+          data-live-search-vendor="{{ settings.live_search_show_vendor }}"
+          data-live-search-meta="{{ settings.live_search_search_meta }}"
+          data-per-row-mob="{{ settings.prod_thumb_mob_per_row }}">
+
+          <div class="main-search__container container">
+            <button class="main-search__close button notabutton" aria-label="{{ 'layout.search.close' | t | escape }}">{% render 'svg-x' %}</button>
 
             <div class="main-search__results"></div>
 
