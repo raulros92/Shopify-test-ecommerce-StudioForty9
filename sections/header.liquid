@@ -172,24 +172,43 @@
                 class="main-search__button button notabutton"
                 type="submit"
                 aria-label="{{ 'layout.header.search_submit' | t }}">{% render 'svg-search' %}</button>
+
+              <div id="main-nav" class="desktop-only">
+                <div
+                  class="navigation navigation--main"
+                  role="navigation"
+                  aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
+                  <div class="navigation__tier-1-container">
+                    {% render 'main-nav-links'
+                      , link_list: section.settings.menu_linklist
+                      , mobile: false
+                      , featured_links: featured_links %}
+                  </div>
+                </div>
+              </div>
+
             </form>
 
+            <div class="heart-icon">
+              {%- render 'svg-heart' -%}
+            </div>
+
             <a href="{{ routes.cart_url }}" class="cart-link">
+              <div class="cart-icon">
+                <span class="cart-link__icon">
+                  {%- if section.settings.cart_icon == 'basket' -%}
+                    {%- render 'svg-basket' -%}
+                  {%- elsif section.settings.cart_icon == 'bag' -%}
+                    {%- render 'svg-bag' -%}
+                  {%- else -%}
+                    {%- render 'svg-cart' -%}
+                  {%- endif -%}
+                </span>
+              </div>
               <span class="cart-link__label{% if section.settings.icon_strategy == 'icons_only' %} visually-hidden{% endif %}">
                 {{- 'layout.header.cart' | t | escape -}}
               </span>
-              <span class="cart-link__icon">
-                {%- if section.settings.cart_icon == 'basket' -%}
-                  {%- render 'svg-basket' -%}
-                {%- elsif section.settings.cart_icon == 'bag' -%}
-                  {%- render 'svg-bag' -%}
-                {%- else -%}
-                  {%- render 'svg-cart' -%}
-                {%- endif -%}
-                {%- if cart.item_count > 0 -%}
-                  <span class="cart-link__count">{{ cart.item_count }}</span>
-                {%- endif -%}
-              </span>
+              <span class="cart-link__label-count">{{ cart.item_count }}</span>
             </a>
           </div>
         </div>
@@ -402,20 +421,6 @@
           </div>
         </div>
       {%- endif -%}
-    </div>
-
-    <div id="main-nav" class="desktop-only">
-      <div
-        class="navigation navigation--main"
-        role="navigation"
-        aria-label="{{ 'general.navigation.main_navigation_aria_label' | t | escape }}">
-        <div class="navigation__tier-1-container">
-          {% render 'main-nav-links'
-            , link_list: section.settings.menu_linklist
-            , mobile: false
-            , featured_links: featured_links %}
-        </div>
-      </div>
     </div>
 
     {%- assign mobile_linklist = section.settings.menu_linklist_mobile | default: section.settings.menu_linklist -%}

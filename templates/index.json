@@ -42,7 +42,7 @@
         "title_size": 66,
         "title_size_mobile": 22,
         "enable_margin": true,
-        "enable_row_spacing": true,
+        "enable_row_spacing": false,
         "full_width": false,
         "use_alt_bg": false,
         "enable_carousel": true,
