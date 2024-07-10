@@ -14,6 +14,19 @@
         line-height: 1em;
       {%- endif %}
     }
+
+    #section-id-{{ section.id }}
+    .gallery__image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+    }
+
     @media (min-width: 768px) {
       {%- if section.settings.height == 'fixed' -%}
         #section-id-{{ section.id }}
@@ -114,6 +127,9 @@
                     {%- endif -%}
                     {%- if block.settings.title != blank -%}
                       <h2 class="overlay-text__title h4-style">{% render 'multiline-text' with block.settings.title %}</h2>
+                    {%- endif -%}
+                    {%- if block.settings.content != blank -%}
+                      <span class="overlay-text__content">{% render 'multiline-text' with block.settings.content %}</span>
                     {%- endif -%}
                     {%- if block.settings.button_label != blank -%}
                       <div class="overlay-text__button-row overlay-text__button-row--{{ section.settings.button_style }}">
@@ -338,6 +354,11 @@
             "id": "title",
             "label": "Heading",
             "default": "Tell your story"
+          }, {
+            "type": "textarea",
+            "id": "content",
+            "label": "Content",
+            "default": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
           }, {
             "type": "text",
             "id": "button_label",

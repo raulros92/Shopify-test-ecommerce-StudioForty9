@@ -8401,6 +8401,11 @@ ul.inline li {
   }
 }
 
+.overlay-text__content {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 .slideshow[data-transition=zoom] .slide .rimage-background,
 .slideshow[data-transition=zoom] .slide .placeholder-image {
   transform: scale(1.2);
@@ -10032,11 +10037,21 @@ table.noborders td {
   }
 }
 .overlay-text__inner {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 100%;
   padding: 20px;
 }
+
+.overlay-text__text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+
 @media (min-width: 768px) {
   .overlay-text--for-banner .overlay-text__inner {
     padding: 50px;
