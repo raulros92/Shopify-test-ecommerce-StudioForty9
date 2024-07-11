@@ -945,11 +945,11 @@
   },
   "current": {
     "use_fullwidth_layout": true,
-    "font_col_base": "#6d7175",
+    "font_col_base": "#004289",
     "font_col_link": "#202223",
-    "font_col_heads": "#202223",
+    "font_col_heads": "#004289",
     "font_col_shoptitle": "#202223",
-    "font_col_sale": "#df5641",
+    "font_col_sale": "#da394c",
     "btn_col": "#013299",
     "btn_col_alt": "#000000",
     "btn_col_txt": "#ffffff",
@@ -997,12 +997,12 @@
     "foot_text_col": "#6d7175",
     "foot_heading_col": "#202223",
     "foot_divider_col": "#e0e0e0",
-    "type_heading_font": "ibm_plex_sans_n4",
+    "type_heading_font": "ibm_plex_sans_n7",
     "capitalize_headings": true,
     "type_base_font": "ibm_plex_sans_n7",
     "type_nav_font": "ibm_plex_sans_n7",
     "type_logo_font": "ibm_plex_sans_n4",
-    "font_size_heading_int": 28,
+    "font_size_heading_int": 24,
     "font_size_base_int": 15,
     "font_size_nav_int": 16,
     "font_size_logo_int": 28,
@@ -1056,46 +1056,6 @@
       },
       "cross-page-promos": {
         "type": "cross-page-promos",
-        "blocks": {
-          "1478527611164": {
-            "type": "icon",
-            "settings": {
-              "icon": "box",
-              "text": "28 day returns",
-              "link_url": ""
-            }
-          },
-          "1478526645605": {
-            "type": "icon",
-            "settings": {
-              "icon": "truck",
-              "text": "free delivery on orders over €40",
-              "link_url": ""
-            }
-          },
-          "1478526647261": {
-            "type": "icon",
-            "settings": {
-              "icon": "map_pin",
-              "text": "In Business Since 1977",
-              "link_url": ""
-            }
-          },
-          "icon_nFYwVn": {
-            "type": "icon",
-            "settings": {
-              "icon": "star",
-              "text": "Something",
-              "link_url": ""
-            }
-          }
-        },
-        "block_order": [
-          "1478527611164",
-          "1478526645605",
-          "1478526647261",
-          "icon_nFYwVn"
-        ],
         "settings": {
           "visibility": "all"
         }
@@ -1106,9 +1066,10 @@
           "1601372812538": {
             "type": "text",
             "settings": {
-              "title": "Talk about your store",
-              "text": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>",
-              "image_width": 55,
+              "title": "",
+              "text": "",
+              "image": "shopify:\/\/shop_images\/logo.jpg",
+              "image_width": 155,
               "show_social_icons": true,
               "soc_icons_large": true
             }
@@ -1116,7 +1077,7 @@
           "1601372709037": {
             "type": "menu",
             "settings": {
-              "title": "Quick links",
+              "title": "Info",
               "menu": "footer"
             }
           },
