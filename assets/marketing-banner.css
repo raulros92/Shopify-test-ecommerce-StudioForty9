@@ -1,0 +1,26 @@
+.marketing-banner {
+  padding: 10px 20px;
+}
+
+.marketing-banner-container {
+  display: flex;
+  gap: 10px;
+}
+
+.message-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+.icon {
+  width: 21px;
+  height: 20px;
+}
+
+.box-icon path,
+.truck-icon path,
+.map-pin-icon path {
+  fill: white;
+}

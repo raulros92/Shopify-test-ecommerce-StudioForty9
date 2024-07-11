@@ -11,6 +11,7 @@
             "enlarge_image": false,
             "subheading": "everything you need",
             "title": "Fishing",
+            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "button_label": "SHOP FISHING",
             "link": "shopify:\/\/products\/selling-plans-ski-wax",
             "text_alignment": "center center"
@@ -24,6 +25,7 @@
             "enlarge_image": true,
             "subheading": "on an adventure",
             "title": "outdoors",
+            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "button_label": "shop outdoors",
             "link": "shopify:\/\/products\/the-3p-fulfilled-snowboard",
             "text_alignment": "center center"
@@ -50,46 +52,11 @@
         "button_style": "secondary"
       }
     },
-    "compact_messages_GNtkyL": {
-      "type": "compact-messages",
-      "blocks": {
-        "message_zkEYLT": {
-          "type": "message",
-          "settings": {
-            "heading": "28 day returns",
-            "subheading": "",
-            "link_url": ""
-          }
-        },
-        "message_MAzfLA": {
-          "type": "message",
-          "settings": {
-            "heading": "free delivery on orders over €40",
-            "subheading": "",
-            "link_url": ""
-          }
-        },
-        "message_gHrKcx": {
-          "type": "message",
-          "settings": {
-            "heading": "In Business Since 1977",
-            "subheading": "",
-            "link_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "message_zkEYLT",
-        "message_MAzfLA",
-        "message_gHrKcx"
-      ],
+    "marketing_banner_e7mL6F": {
+      "type": "marketing-banner",
       "settings": {
-        "head_not_col_bg": "#f4f6f8",
-        "head_not_col_txt1": "#171717",
-        "head_not_col_txt2": "#4c4c4b",
-        "head_not_mob_show": true,
-        "head_not_mob_text": "Add important information here",
-        "head_not_mob_url": ""
+        "num_messages": 3,
+        "background_color": "#004289"
       }
     },
     "16359279164ff7d3f3": {
@@ -102,6 +69,7 @@
             "enlarge_image": true,
             "subheading": "Gallery",
             "title": "Tell your story",
+            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "button_label": "",
             "link": "",
             "text_alignment": "bottom left"
@@ -114,6 +82,7 @@
             "enlarge_image": false,
             "subheading": "Gallery",
             "title": "Tell your story",
+            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "button_label": "",
             "link": "",
             "text_alignment": "bottom left"
@@ -126,6 +95,7 @@
             "enlarge_image": false,
             "subheading": "Gallery",
             "title": "Tell your story",
+            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
             "button_label": "",
             "link": "",
             "text_alignment": "bottom left"
@@ -207,7 +177,7 @@
   },
   "order": [
     "gallery_Piqzhg",
-    "compact_messages_GNtkyL",
+    "marketing_banner_e7mL6F",
     "16359279164ff7d3f3",
     "16359278676808bea5",
     "newsletter_DHEY7i",
