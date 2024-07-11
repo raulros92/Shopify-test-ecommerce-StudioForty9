@@ -54,8 +54,35 @@
     },
     "marketing_banner_e7mL6F": {
       "type": "marketing-banner",
+      "blocks": {
+        "message_8tL4NC": {
+          "type": "message",
+          "settings": {
+            "icon": "box",
+            "text": "28 day returns"
+          }
+        },
+        "message_mtKJBj": {
+          "type": "message",
+          "settings": {
+            "icon": "truck",
+            "text": "free delivery on orders over €40"
+          }
+        },
+        "message_WGezqc": {
+          "type": "message",
+          "settings": {
+            "icon": "map_pin",
+            "text": "In Business Since 1977"
+          }
+        }
+      },
+      "block_order": [
+        "message_8tL4NC",
+        "message_mtKJBj",
+        "message_WGezqc"
+      ],
       "settings": {
-        "num_messages": 3,
         "background_color": "#004289"
       }
     },
@@ -115,7 +142,7 @@
         "title_size": 30,
         "title_size_mobile": 22,
         "enable_margin": true,
-        "enable_row_spacing": true,
+        "enable_row_spacing": false,
         "full_width": false,
         "use_alt_bg": false,
         "enable_carousel": true,

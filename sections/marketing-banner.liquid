@@ -2,10 +2,8 @@
 
 <div class="marketing-banner" style="background: {{ section.settings.background_color }};">
   <div class="marketing-banner-container">
-    {% assign num_messages = section.settings.num_messages | default: 3 %}
-    {% assign num_messages = num_messages | at_least: 1 | at_most: 5 %}
-    
-    {% for block in section.blocks limit: num_messages %}
+
+    {% for block in section.blocks %}
       <div class="message-block">
         {% case block.settings.icon %}
           {% when 'box' %}
@@ -70,11 +68,6 @@
     "max_blocks": 5,
     "settings": [
       {
-        "type": "number",
-        "id": "num_messages",
-        "label": "Number of Messages",
-        "default": 3,
-      }, {
         "type": "color",
         "id": "background_color",
         "label": "Background Color",
@@ -101,9 +94,6 @@
               }, {
                 "value": "map_pin",
                 "label": "Map Pin"
-              }, {
-                "value": "star",
-                "label": "Star"
               }
             ]
           }, {
