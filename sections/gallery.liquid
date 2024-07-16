@@ -7,6 +7,12 @@
       }
     {%- endif -%}
 
+    .gallery-reversed {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+
     #section-id-{{ section.id }}
     .overlay-text__title {
       font-size: {{ section.settings.title_size_mobile }}px;
@@ -25,6 +31,11 @@
       bottom: 0;
       background-color: rgba(0, 0, 0, 0.3);
       z-index: 1;
+    }
+
+    #section-id-{{ section.id }}
+    .gallery-reversed .gallery__image::before {
+      background-color: rgba(0, 0, 0, 0);
     }
 
     @media (min-width: 768px) {
@@ -70,7 +81,8 @@
   <div class="{{ super_container_class }}">
     {%- unless section.settings.full_width -%}<div class="container container--not-mobile">{%- endunless -%}
 
-    <div class="gallery gallery--height-{{ section.settings.height }} gallery--grid-{{ section.settings.grid }}{% if section.settings.enable_margin %} gallery--with-margins{% endif %}{% if section.settings.enable_carousel %} gallery--mobile-carousel slick-slider-overlay-dots{% endif %}{% if section.settings.full_width and section.settings.enable_margin %} gallery--with-vertical-outer-padding{% endif %}" data-grid="{{ section.settings.grid }}">
+    <div class="gallery gallery--height-{{ section.settings.height }} gallery--grid-{{ section.settings.grid }}{% if section.settings.enable_margin %} gallery--with-margins{% endif %}{% if section.settings.enable_carousel %} gallery--mobile-carousel slick-slider-overlay-dots{% endif %}{% if section.settings.full_width and section.settings.enable_margin %} gallery--with-vertical-outer-padding{% endif %} {% if section.settings.display-style == "reversed"%} gallery-reversed {% endif %}" data-grid="{{ section.settings.grid }}">
+
       <div class="gallery__row">
         {%- for block in section.blocks -%}
           {%- assign forloop_mod_grid = forloop.index0 | modulo: section.settings.grid -%}
@@ -110,8 +122,10 @@
                 <noscript>
                   <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%">
                     <img
-                      src="{{ block.settings.image | img_url: '1024x1024' }}"
+                      src="{{ block.settings.image | image_url: width: 1024 }}"
                       alt="{{ block.settings.image.alt | escape }}"
+                      width="{{ block.settings.image.width }}"
+                      height="{{ block.settings.image.height }}"
                       class="rimage__image">
                   </div>
                 </noscript>
@@ -166,6 +180,21 @@
         "default": 2
       },
       {
+        "type": "select",
+        "id": "display-style",
+        "label": "Change display",
+        "options": [
+          {
+            "value": "standard",
+            "label": "Standard"
+          }, {
+            "value": "reversed",
+            "label": "Reversed"
+          }
+        ],
+        "default": "standard"
+      },
+      {
         "type": "radio",
         "id": "height",
         "label": "Image height",
@@ -189,8 +218,7 @@
         "unit": "px",
         "label": "Desktop image row heights",
         "default": 460
-      },
-      {
+      }, {
         "type": "range",
         "id": "mobile_image_height",
         "min": 100,

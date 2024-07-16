@@ -38,6 +38,7 @@
       ],
       "settings": {
         "grid": 2,
+        "display-style": "standard",
         "height": "fixed",
         "desktop_image_height": 580,
         "mobile_image_height": 400,
@@ -92,39 +93,42 @@
         "16359279164ff7d3f3-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Accessories_with_text.png",
             "alignment": "center center",
             "enlarge_image": true,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "subheading": "",
+            "title": "",
+            "content": "",
             "button_label": "",
-            "link": "",
+            "link": "shopify:\/\/products\/gift-card",
             "text_alignment": "bottom left"
           }
         },
         "16359279164ff7d3f3-1": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Accessories_with_text_1cc40439-1660-4076-8a9c-a665c106b613.png",
             "alignment": "center center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "subheading": "",
+            "title": "",
+            "content": "",
             "button_label": "",
-            "link": "",
+            "link": "shopify:\/\/products\/gift-card",
             "text_alignment": "bottom left"
           }
         },
         "16359279164ff7d3f3-2": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Outdoor_essentials_30f16a98-c69b-4de7-b636-54f665df2615.png",
             "alignment": "center center",
             "enlarge_image": false,
-            "subheading": "Gallery",
-            "title": "Tell your story",
-            "content": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+            "subheading": "",
+            "title": "",
+            "content": "",
             "button_label": "",
-            "link": "",
+            "link": "shopify:\/\/products\/gift-card",
             "text_alignment": "bottom left"
           }
         }
@@ -136,7 +140,8 @@
       ],
       "settings": {
         "grid": 2,
-        "height": "fixed",
+        "display-style": "reversed",
+        "height": "adapt",
         "desktop_image_height": 460,
         "mobile_image_height": 400,
         "title_size": 30,
