@@ -7403,6 +7403,30 @@ svg.feather {
   transform: scaleX(-1);
 }
 
+.prev.ltr-icon,
+.next.ltr-icon {
+  position: fixed;
+  top: 35%;
+  transform: translateY(-50%);
+  z-index: 2;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.prev.ltr-icon {
+  left: 10px; /
+}
+
+.next.ltr-icon {
+  right: 10px; 
+}
+
+.prev.ltr-icon svg,
+.next.ltr-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
 /* Main footer */
 #pagefooter {
   background: {{ foot_bg_col }};
@@ -9170,6 +9194,7 @@ shopify-payment-terms {
 
 .has-paging__title {
   vertical-align: middle;
+  font-size: 24px;
 }
 
 .owl-btn-disabled {
