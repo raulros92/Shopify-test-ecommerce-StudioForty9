@@ -39,6 +39,8 @@
     </span>
   {%- endif -%}
 
+  {% comment %} This line of code is commented TO REMOVE X% off from the picture
+  
   {%- liquid
     if label_count < 2 and settings.prod_reduction_show and cheapest_variant.compare_at_price > cheapest_variant.price
       if settings.prod_reduction_type == 'percent'
@@ -57,7 +59,7 @@
     <span class="product-label product-label--sale">
       <span>{{ sale_label_text }}</span>
     </span>
-  {%- endif -%}
+  {%- endif -%} {% endcomment %}
 
   {%- if label_count < 2 and settings.prod_stock_warn_show and settings.prod_stock_warn_limit_int == 0 and product.variants.size == 1 and product.variants.first.inventory_management != blank and product.variants.first.inventory_quantity > 0 -%}
     {%- assign label_count = label_count | plus: 1 -%}

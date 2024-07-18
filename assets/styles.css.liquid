@@ -7532,6 +7532,8 @@ ul.inline li {
   margin: 1em 0 0.4em;
   font-size: {{ font_size_base_int | times: 0.8 | round }}px;
   line-height: 1.3em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .product-block__subtitle {
@@ -8055,6 +8057,17 @@ ul.inline li {
 
 .price-label--sale {
   color: {{ prod_label_sale_text }};
+  font-size: 11.29px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(218, 57, 76, 1);
+  color: white;
+  padding: 1px 0;
+  width: 100%;
+  border-radius: 3px;
+  z-index: 3;
 }
 
 .price-label--preorder {
@@ -8084,6 +8097,14 @@ ul.inline li {
   margin-inline-end: 0.5rem;
 }
 
+.product-price__amount {
+    color: var(--c-text);
+}
+
+.product-price__amount--on-sale {
+      color: var(--c-danger);
+}
+
 {% elsif settings.prod_thumb_text_align == 'right' %}
 .product-price {
   justify-content: flex-end;
@@ -8099,23 +8120,30 @@ ul.inline li {
 }
 
 .product-price__item {
+  font-family: Helvetica;
   margin-inline-start: 0.25rem;
   margin-inline-end: 0.25rem;
 }
 
 {% endif %}
 .product-price__compare {
-  opacity: 0.5;
+  font-family: Helvetica;
+  font-weight: 400;
   text-decoration: line-through;
 }
 
 .product-price__from {
   margin-inline-end: 0.35em;
   font-size: {{ font_size_base_int | times: 0.8 | round }}px;
+  color: var(--c-danger);
 }
 
 .product-block .product-info .unit-price {
   font-size: {{ font_size_base_int | times: 0.8 | round }}px;
+}
+
+.product-block__title {
+  font-weight: 500;
 }
 
 @media (max-width: 767.98px) {

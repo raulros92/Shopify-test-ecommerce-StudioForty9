@@ -201,7 +201,7 @@
       "low_stock": "Low stock",
       "in_stock": "In stock",
       "sold_out": "Sold Out",
-      "sale": "Sale",
+      "sale": "SALE",
       "new_in": "New in",
       "percent_reduction": "{{ amount }}% off",
       "value_reduction_html": "{{ amount }} off"
