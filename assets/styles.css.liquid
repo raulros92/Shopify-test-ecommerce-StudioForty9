@@ -3902,6 +3902,64 @@ input[type=text].main-search__input {
   list-style: none;
 }
 
+.newsletter__container {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+  height: 314px;
+}
+
+.newsletter__content {
+  background-color: var(--c-white);
+  height: 247px;
+  padding: 40px 0px 0px 0px;
+  width: 654px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0;
+}
+
+.newsletter-title {
+  color: var(--c-text);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.newsletter-text {
+  color: var(--c-text);
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.6;
+}
+
+.signup-form__email {
+  background: var(--c-light) !important;
+}
+
+.signup-form__button {
+  width: 49%;
+}
+
+.signup-form__label {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 42px;
+  font-family: Circular TT;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.8px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
 @media (min-width: 768px) {
   .section-footer__newsletter-block {
     flex: 0 1 350px;
@@ -6972,7 +7030,7 @@ h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .
 }
 @media (max-width: 1300px) {
   .hometitle {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 }
 
@@ -8507,6 +8565,7 @@ ul.inline li {
 
 .signup-form__inline-container {
   display: inline-flex;
+  width: 574px;
 }
 .signup-form__inline-container input {
   margin-inline-end: 10px;

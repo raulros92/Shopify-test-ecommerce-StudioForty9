@@ -161,13 +161,16 @@
                 value="last" />
               <div class="main-search__input-container">
                 <input
+                  id="main-search-input"
                   class="main-search__input"
                   type="text"
                   name="q"
                   autocomplete="off"
                   placeholder="{{ 'layout.search.placeholder' | t | escape }}"
-                  aria-label="{{ 'layout.search.title' | t | escape }}" />
+                  aria-label="{{ 'layout.search.title' | t | escape }}"
+                  data-placeholder="{{ 'layout.search.placeholder' | t | escape }}" />
               </div>
+
               <button
                 class="main-search__button button notabutton"
                 type="submit"
@@ -529,6 +532,9 @@
   {%- endif -%}
 
 {%- endif -%}
+
+{% comment %} I included a short script to remove the placeholder of the main-search once it is clicked. {% endcomment %}
+<script src="{{ 'search-placeholder__remove.js' | asset_url }}" defer="defer"></script>
 
 
 {% schema %}

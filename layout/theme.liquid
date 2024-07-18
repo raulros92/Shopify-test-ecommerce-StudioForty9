@@ -140,7 +140,8 @@
     {% section 'popup' %}
   {% endif %}
 
-  {{ 'vendor.min.js'  | asset_url | script_tag }}
-  {{ 'theme.js'  | asset_url | script_tag }}
+  <script src="{{ 'vendor.min.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
 </body>
 </html>

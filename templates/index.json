@@ -174,7 +174,8 @@
       "settings": {
         "title": "join our Newsletter",
         "subheading": "<p>Be the first to know about our offers, events &  new arrivals<\/p>",
-        "color_bg": "#ffffff"
+        "color_bg": "#ffffff",
+        "image_bg": "shopify:\/\/shop_images\/Newsletter_wallpaper.jpg"
       }
     },
     "1635927863703110df": {

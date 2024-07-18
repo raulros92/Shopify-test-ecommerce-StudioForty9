@@ -3,25 +3,33 @@
     <div class="flexible-layout valign-middle">
       <div class="column column--half {% if section.settings.image_position == 'right' %}column--order-push-desktop{% endif %}">
         {% if section.settings.button_link != blank %}<a class="block-link" href="{{ section.settings.button_link }}">{% endif %}
-          <div class="image-overlap" style="max-width: {{ section.settings.image_width }}px">
-            <div class="image-overlap__image image-overlap__image-1">
-              {%- if section.settings.image == blank -%}
-                <div class="placeholder-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-              {%- else -%}
-                {%- render 'responsive-image', image: section.settings.image, animate: true, animate_delay: "0.1s", animate_type: "cc-fade-in-up" -%}
-              {%- endif -%}
-            </div>
-
-            {%- if section.settings.image == blank or section.settings.image_2 != blank -%}
-              <div class="image-overlap__image image-overlap__image-2">
-                {%- if section.settings.image_2 == blank -%}
-                  <div class="placeholder-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
-                {%- else -%}
-                  {%- render 'responsive-image', image: section.settings.image_2, animate: true, animate_delay: "0.3s", animate_type: "cc-fade-in-up" -%}
-                {%- endif -%}
-              </div>
+        <div class="image-overlap" style="max-width: {{ section.settings.image_width }}px">
+          <div class="image-overlap__image image-overlap__image-1">
+            {%- if section.settings.image == blank -%}
+              <div class="placeholder-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+            {%- else -%}
+              {%- render 'responsive-image'
+                , image: section.settings.image
+                , animate: true
+                , animate_delay: "0.1s"
+                , animate_type: "cc-fade-in-up" -%}
             {%- endif -%}
           </div>
+
+          {%- if section.settings.image == blank or section.settings.image_2 != blank -%}
+            <div class="image-overlap__image image-overlap__image-2">
+              {%- if section.settings.image_2 == blank -%}
+                <div class="placeholder-image">{{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+              {%- else -%}
+                {%- render 'responsive-image'
+                  , image: section.settings.image_2
+                  , animate: true
+                  , animate_delay: "0.3s"
+                  , animate_type: "cc-fade-in-up" -%}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
         {% if section.settings.button_link != blank %}</a>{% endif %}
       </div>
 
@@ -82,38 +90,32 @@
         "type": "text",
         "id": "subheading",
         "label": "Subheading"
-      },
-      {
+      }, {
         "type": "text",
         "id": "title",
         "label": "Heading",
         "default": "Image with text"
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "use_h1",
         "label": "Set as primary page heading",
         "info": "Use <h1> tag. One per page recommended. [Read more](https://cleancanvas.co.uk/support/symmetry/section-h1-setting)",
         "default": false
-      },
-      {
+      }, {
         "type": "richtext",
         "id": "text",
         "label": "Text",
         "default": "<p>Pair text with an image to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.<\/p>"
-      },
-	    {
+      }, {
         "type": "text",
         "id": "button_label",
         "label": "Button",
         "default": "Read more"
-      },
-      {
+      }, {
         "type": "url",
         "id": "button_link",
         "label": "Button link"
-      },
-      {
+      }, {
         "type": "select",
         "id": "button_style",
         "label": "Button style",
@@ -122,18 +124,15 @@
           {
             "label": "Button - primary",
             "value": "primary"
-          },
-          {
+          }, {
             "label": "Button - secondary",
             "value": "secondary"
-          },
-          {
+          }, {
             "label": "Link",
             "value": "link"
           }
         ]
-      },
-      {
+      }, {
         "type": "select",
         "id": "image_position",
         "label": "Image alignment",
@@ -142,14 +141,12 @@
           {
             "value": "left",
             "label": "Left"
-          },
-          {
+          }, {
             "value": "right",
             "label": "Right"
           }
         ]
-      },
-      {
+      }, {
         "type": "select",
         "id": "text_alignment",
         "label": "Text alignment",
@@ -158,18 +155,15 @@
           {
             "value": "left",
             "label": "Left"
-          },
-          {
+          }, {
             "value": "center",
             "label": "Center"
-          },
-          {
+          }, {
             "value": "right",
             "label": "Right"
           }
         ]
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "use_alt_bg",
         "label": "Use alternate section color",
