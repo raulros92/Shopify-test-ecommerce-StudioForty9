@@ -1,6 +1,7 @@
 <div class="{% unless section.settings.full_width %}article{% endunless %} {% if section.settings.use_alt_bg %}use-alt-bg fully-padded-row--{{ section.settings.height }}{% else %}fully-spaced-row--{{ section.settings.height }}{% endif %}" data-cc-animate>
   <div class="container">
-    <div class="align-{{ section.settings.text_alignment }} spaced-column">
+    {% comment %} We add a new class to apply some styles to this subheading in particular: subheading-container {% endcomment %}
+    <div class="align-{{ section.settings.text_alignment }} spaced-column subheading-container">
       {% assign skip_block_count = 0 %}
       {% for block in section.blocks %}
         {%- liquid
@@ -12,13 +13,14 @@
         {% case block.type %}
           {% when 'heading' %}
             {% if block.settings.use_h1 %}
-              <h1 class="majortitle in-content" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h1>
+              <h1 class="majortitle-h1 in-content " {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h1>
             {% else %}
               <h2 class="majortitle in-content h1-style" {{ block.shopify_attributes }}>{{ block.settings.title | escape }}</h2>
             {% endif %}
 
           {% when 'subheading' %}
-            <div class="subheading subheading--over lightly-spaced-row-above" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</div>
+            {% comment %} We remove the subheading-over class to eliminate the margin and modify the lightly-spaced-row-above. {% endcomment %}
+            <div class="subheading lightly-spaced-row-above" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</div>
 
           {% when 'text' %}
             <div class="rte lightly-spaced-row {% if block.settings.enlarge_text %}large-text{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
@@ -30,7 +32,10 @@
               {%- for next_block in section.blocks offset: forloop.index -%}
                 {%- if next_block.type == 'button' -%}
                   {%- assign skip_block_count = skip_block_count | plus: 1 -%}
-                  <a class="{% if next_block.settings.button_style != 'link' %}btn btn--{{ next_block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__button" href="{{ next_block.settings.button_link }}" {{ block.shopify_attributes }}>{{ next_block.settings.button_label | escape }}</a>
+                  <a
+                    class="{% if next_block.settings.button_style != 'link' %}btn btn--{{ next_block.settings.button_style }}{% else %}small-feature-link{% endif %} button-row__button"
+                    href="{{ next_block.settings.button_link }}"
+                    {{ block.shopify_attributes }}>{{ next_block.settings.button_label | escape }}</a>
                 {%- else -%}
                   {%- break -%}
                 {%- endif -%}
@@ -38,22 +43,28 @@
             </div>
 
           {% when 'image' %}
-            <div class="lightly-spaced-row lightly-spaced-row-above inline-width-container" style="width: {{ block.settings.image_width }}px" {{ block.shopify_attributes }}>
+            <div
+              class="lightly-spaced-row lightly-spaced-row-above inline-width-container"
+              style="width: {{ block.settings.image_width }}px"
+              {{ block.shopify_attributes }}>
               {% if block.settings.url != blank %}<a href="{{ block.settings.url }}">{% endif %}
-                {% if block.settings.image != blank %}
-                  {% render 'responsive-image', image: block.settings.image %}
-                {% else %}
-                  <div class="placeholder-image">
-                    {{- 'image' | placeholder_svg_tag: 'placeholder-svg' -}}
-                  </div>
-                {% endif %}
+              {% if block.settings.image != blank %}
+                {% render 'responsive-image'
+                  , image: block.settings.image %}
+              {% else %}
+                <div class="placeholder-image">
+                  {{- 'image' | placeholder_svg_tag: 'placeholder-svg' -}}
+                </div>
+              {% endif %}
               {% if block.settings.url != blank %}</a>{% endif %}
             </div>
 
           {% when 'icon' %}
             <div class="lightly-spaced-row" {{ block.shopify_attributes }}>
               <span class="large-light-icon">
-                {% render 'icon', icon: block.settings.icon, size: 'medium' %}
+                {% render 'icon'
+                  , icon: block.settings.icon
+                  , size: 'medium' %}
               </span>
             </div>
 
@@ -78,18 +89,15 @@
           {
             "value": "small",
             "label": "Small"
-          },
-          {
+          }, {
             "value": "medium",
             "label": "Medium"
-          },
-          {
+          }, {
             "value": "large",
             "label": "Large"
           }
         ]
-      },
-      {
+      }, {
         "type": "select",
         "id": "text_alignment",
         "label": "Text alignment",
@@ -98,24 +106,20 @@
           {
             "value": "left",
             "label": "Left"
-          },
-          {
+          }, {
             "value": "center",
             "label": "Center"
-          },
-          {
+          }, {
             "value": "right",
             "label": "Right"
           }
         ]
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "full_width",
         "label": "Wide display",
         "default": false
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "use_alt_bg",
         "label": "Use alternate section color",
@@ -132,8 +136,7 @@
             "id": "title",
             "label": "Heading",
             "default": "Rich text"
-          },
-          {
+          }, {
             "type": "checkbox",
             "id": "use_h1",
             "label": "Set as primary page heading",
@@ -163,8 +166,7 @@
             "id": "text",
             "label": "Text",
             "default": "<p>Use this text to share information about your store with your customers. Describe products, share announcements, or welcome customers to your store.</p>"
-          },
-          {
+          }, {
             "type": "checkbox",
             "id": "enlarge_text",
             "label": "Enlarge text",
@@ -179,19 +181,16 @@
           {
             "type": "paragraph",
             "content": "Consecutive buttons will show on the same row"
-          },
-          {
+          }, {
             "type": "text",
             "id": "button_label",
             "label": "Button",
             "default": "Button text"
-          },
-          {
+          }, {
             "type": "url",
             "id": "button_link",
             "label": "Button link"
-          },
-          {
+          }, {
             "type": "select",
             "id": "button_style",
             "label": "Button style",
@@ -200,20 +199,17 @@
               {
                 "label": "Button - primary",
                 "value": "primary"
-              },
-              {
+              }, {
                 "label": "Button - secondary",
                 "value": "secondary"
-              },
-              {
+              }, {
                 "label": "Link",
                 "value": "link"
               }
             ]
           }
         ]
-      },
-      {
+      }, {
         "type": "icon",
         "name": "Icon",
         "settings": [
@@ -238,132 +234,101 @@
               {
                 "value": "calendar",
                 "label": "Calendar"
-              },
-              {
+              }, {
                 "value": "chat_bubble",
                 "label": "Chat bubble"
-              },
-              {
+              }, {
                 "value": "check_mark",
                 "label": "Check mark"
-              },
-              {
+              }, {
                 "value": "check_mark_in_circle",
                 "label": "Check mark in circle"
-              },
-              {
+              }, {
                 "value": "clock",
                 "label": "Clock"
-              },
-              {
+              }, {
                 "value": "credit_card",
                 "label": "Credit card"
-              },
-              {
+              }, {
                 "value": "dollar_sign",
                 "label": "Dollar sign"
-              },
-              {
+              }, {
                 "value": "dryer",
                 "label": "Dryer"
-              },
-              {
+              }, {
                 "value": "eye",
                 "label": "Eye"
-              },
-              {
+              }, {
                 "value": "feather",
                 "label": "Feather"
-              },
-              {
+              }, {
                 "value": "gift",
                 "label": "Gift"
-              },
-              {
+              }, {
                 "value": "heart",
                 "label": "Heart"
-              },
-              {
+              }, {
                 "value": "iron",
                 "label": "Iron"
-              },
-              {
+              }, {
                 "value": "leaf",
                 "label": "Leaf"
-              },
-              {
+              }, {
                 "value": "leather",
                 "label": "Leather"
-              },
-              {
+              }, {
                 "value": "lock",
                 "label": "Lock"
-              },
-              {
+              }, {
                 "value": "map_pin",
                 "label": "Map pin"
-              },
-              {
+              }, {
                 "value": "pants",
                 "label": "Pants"
-              },
-              {
+              }, {
                 "value": "percent",
                 "label": "Percent"
-              },
-              {
+              }, {
                 "value": "plane",
                 "label": "Plane"
-              },
-              {
+              }, {
                 "value": "price_tag",
                 "label": "Price tag"
-              },
-              {
+              }, {
                 "value": "question_mark",
                 "label": "Question mark"
-              },
-              {
+              }, {
                 "value": "return",
                 "label": "Return"
-              },
-              {
+              }, {
                 "value": "ruler",
                 "label": "Ruler"
-              },
-              {
+              }, {
                 "value": "scissors",
                 "label": "Scissors"
-              },
-              {
+              }, {
                 "value": "shirt",
                 "label": "Shirt"
-              },
-              {
+              }, {
                 "value": "shoe",
                 "label": "Shoe"
-              },
-              {
+              }, {
                 "value": "silhouette",
                 "label": "Silhouette"
-              },
-              {
+              }, {
                 "value": "star",
                 "label": "Star"
-              },
-              {
+              }, {
                 "value": "truck",
                 "label": "Truck"
-              },
-              {
+              }, {
                 "value": "washing",
                 "label": "Washing"
               }
             ]
           }
         ]
-      },
-      {
+      }, {
         "type": "image",
         "name": "Image",
         "settings": [
@@ -371,8 +336,7 @@
             "type": "image_picker",
             "id": "image",
             "label": "Image"
-          },
-          {
+          }, {
             "type": "range",
             "id": "image_width",
             "min": 60,
@@ -381,8 +345,7 @@
             "unit": "px",
             "label": "Image width",
             "default": 260
-          },
-          {
+          }, {
             "type": "url",
             "id": "url",
             "label": "Link"
@@ -397,8 +360,7 @@
         "blocks": [
           {
             "type": "heading"
-          },
-          {
+          }, {
             "type": "text"
           }
         ]

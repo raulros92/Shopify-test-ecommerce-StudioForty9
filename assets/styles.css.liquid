@@ -7021,7 +7021,17 @@ h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .
 {% endif %}
 .title,
 .majortitle {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39px;
+  color: var(--c-text);
+}
+
+.majortitle-h1 {
   margin: 0 0 1.25rem;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--c-text);
 }
 
 .hometitle {
@@ -7065,6 +7075,14 @@ h1, .h1-style, h2, .h2-style, h3, .h3-style, h4, .h4-style, h5, .h5-style, h6, .
   line-height: 1.3em;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.subheading-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
 }
 
 .subheading--over {
@@ -10670,6 +10688,13 @@ model-viewer .container {
 
 .lightly-spaced-row-above {
   margin-top: 2rem;
+  margin-bottom: 0px;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 66px;
+  text-transform: uppercase;
+  color: var(--c-text);
+  width: 1134px;
 }
 
 @media (max-width: 767.98px) {
@@ -10679,6 +10704,9 @@ model-viewer .container {
 }
 .lightly-spaced-row {
   margin-bottom: 1em;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--c-text);
 }
 
 .lightish-spaced-row {
@@ -11648,6 +11676,15 @@ model-viewer .container {
   width: 30px;
   height: 30px;
   stroke-width: 1;
+}
+
+.title__rich-text {
+font-size: 30px;
+font-weight: 700;
+line-height: 39px;
+text-align: center;
+color: var(--c-text);
+
 }
 
 .sticky-content-container {
