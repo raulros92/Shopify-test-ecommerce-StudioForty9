@@ -185,7 +185,7 @@
           "type": "heading",
           "settings": {
             "title": "Quisque velit nisi-",
-            "use_h1": false
+            "use_h1": true
           }
         },
         "subheading_frp9Yd": {
@@ -193,96 +193,79 @@
           "settings": {
             "subheading": "\"Pellentesque in ipsum id orci porta dapibus.\""
           }
-        },
-        "image_JHPfnk": {
-          "type": "image",
+        }
+      },
+      "block_order": [
+        "1635927863703110df-1",
+        "subheading_frp9Yd"
+      ],
+      "settings": {
+        "height": "small",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": true
+      }
+    },
+    "logo_list_DWNRRE": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_c3xe3M": {
+          "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/location_1.png",
             "image_width": 60,
-            "url": ""
+            "link": "",
+            "title": "WE LOVE OUTDOORS",
+            "text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
           }
         },
-        "heading_XzmEMk": {
-          "type": "heading",
-          "settings": {
-            "title": "WE love outdoors",
-            "use_h1": false
-          }
-        },
-        "text_Y6ERzb": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.<\/p>",
-            "enlarge_text": true
-          }
-        },
-        "image_en79ad": {
-          "type": "image",
+        "logo_JkmgWg": {
+          "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/planet-earth_1.png",
             "image_width": 60,
-            "url": ""
+            "link": "",
+            "title": "SUSTAINABLE",
+            "text": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
           }
         },
-        "heading_wJb3yh": {
-          "type": "heading",
-          "settings": {
-            "title": "Sustainable",
-            "use_h1": false
-          }
-        },
-        "text_pmGRfF": {
-          "type": "text",
-          "settings": {
-            "text": "<p> Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum.<\/p>",
-            "enlarge_text": true
-          }
-        },
-        "image_Anrh9f": {
-          "type": "image",
+        "logo_cfmAzg": {
+          "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/saint-patricks-day_1.png",
             "image_width": 60,
-            "url": ""
+            "link": "",
+            "title": "BASED IN IRELAND",
+            "text": "Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur."
           }
         },
-        "heading_8xggKE": {
-          "type": "heading",
-          "settings": {
-            "title": "based in IRELAND",
-            "use_h1": false
-          }
-        },
-        "text_en87Pa": {
-          "type": "text",
-          "settings": {
-            "text": "<p> Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur.<\/p>",
-            "enlarge_text": true
-          }
-        },
-        "image_Wft4eN": {
-          "type": "image",
+        "logo_gXQWPm": {
+          "type": "logo",
           "settings": {
             "image": "shopify:\/\/shop_images\/knitting_1.png",
             "image_width": 60,
-            "url": ""
+            "link": "",
+            "title": "SOMETHING",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           }
-        },
-        "heading_yKcxcJ": {
-          "type": "heading",
-          "settings": {
-            "title": "something",
-            "use_h1": false
-          }
-        },
-        "text_B7Ezkn": {
-          "type": "text",
-          "settings": {
-            "text": "<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit<\/p>",
-            "enlarge_text": true
-          }
-        },
-        "button_ERPFNG": {
+        }
+      },
+      "block_order": [
+        "logo_c3xe3M",
+        "logo_JkmgWg",
+        "logo_cfmAzg",
+        "logo_gXQWPm"
+      ],
+      "settings": {
+        "title": "",
+        "image_opacity": 100,
+        "use_alt_bg": true
+      }
+    },
+    "rich_text_GHJVjk": {
+      "type": "rich-text",
+      "blocks": {
+        "button_TLfnjc": {
           "type": "button",
           "settings": {
             "button_label": "Learn More",
@@ -292,27 +275,13 @@
         }
       },
       "block_order": [
-        "1635927863703110df-1",
-        "subheading_frp9Yd",
-        "image_JHPfnk",
-        "heading_XzmEMk",
-        "text_Y6ERzb",
-        "image_en79ad",
-        "heading_wJb3yh",
-        "text_pmGRfF",
-        "image_Anrh9f",
-        "heading_8xggKE",
-        "text_en87Pa",
-        "image_Wft4eN",
-        "heading_yKcxcJ",
-        "text_B7Ezkn",
-        "button_ERPFNG"
+        "button_TLfnjc"
       ],
       "settings": {
-        "height": "small",
+        "height": "medium",
         "text_alignment": "center",
         "full_width": false,
-        "use_alt_bg": false
+        "use_alt_bg": true
       }
     },
     "marketing_banner_QreFmy": {
@@ -366,6 +335,8 @@
     "16359278676808bea5",
     "newsletter_DHEY7i",
     "1635927863703110df",
+    "logo_list_DWNRRE",
+    "rich_text_GHJVjk",
     "marketing_banner_QreFmy"
   ]
 }

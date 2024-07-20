@@ -57,6 +57,12 @@
               </div>
             {%- endif -%}
 
+            {%- if block.settings.text != blank -%}
+              <div class="logo-list__logo-text">
+                {{ block.settings.text | escape }}
+              </div>
+            {%- endif -%}
+
           {%- unless block.settings.link != blank -%}
             </div>
           {%- else -%}
@@ -139,6 +145,11 @@
           "id": "title",
           "label": "Title",
           "info": "Optional"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
         }
       ]
     }

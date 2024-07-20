@@ -4168,12 +4168,15 @@ input[type=text].main-search__input {
 .logo-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-bottom: -40px;
 }
+
+.logo-list-container {
+  margin-top: -120px;
+  margin-bottom: -120px;
+}
+
 @media (min-width: 768px) {
   .logo-list {
     margin-left: -25px;
@@ -4185,9 +4188,9 @@ input[type=text].main-search__input {
 .logo-list__logo {
   display: flex;
   flex-direction: column;
-  flex: 0 0 calc(50% - 40px);
-  margin: 0 20px 40px;
+  justify-content: center;
 }
+
 @media (min-width: 400px) {
   .logo-list__logo {
     flex: 0 0 calc(33.3% - 40px);
@@ -4232,6 +4235,18 @@ input[type=text].main-search__input {
 
 .logo-list__logo-title {
   margin-top: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  width: 250px;
+  color: var(--c-text);
+}
+
+.logo-list__logo-text {
+  margin-bottom: 1em;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--c-text);
 }
 
 .testimonial-list {
@@ -10812,6 +10827,8 @@ model-viewer .container {
 }
 .button-row .button-row__button {
   margin: 10px 0.5em 0;
+  width: 277px;
+  height: 52px;
 }
 
 .lightly-styled-select {
