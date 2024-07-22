@@ -1022,6 +1022,10 @@
     "prod_sale_show": true,
     "prod_sold_out_show": true,
     "enable_product_reviews_collection": false,
+    "social_twitter_url": "https:\/\/twitter.com\/shopify",
+    "social_facebook_url": "https:\/\/facebook.com\/shopify",
+    "social_pinterest_url": "https:\/\/pinterest.com\/shopify",
+    "social_instagram_url": "https:\/\/instagram.com\/shopify",
     "search_type": "product",
     "enable_live_search": true,
     "live_search_show_vendor": false,
@@ -1070,7 +1074,7 @@
               "text": "",
               "image": "shopify:\/\/shop_images\/logo.jpg",
               "image_width": 155,
-              "show_social_icons": true,
+              "show_social_icons": false,
               "soc_icons_large": true
             }
           },
@@ -1081,13 +1085,23 @@
               "menu": "footer"
             }
           },
+          "text_NKYJkD": {
+            "type": "text",
+            "settings": {
+              "title": "Contact",
+              "text": "<p>Tel 012 3456789<\/p><p>E-mail: hello@domail.com<\/p><p>Lorem Ipsum Outdoor<\/p><p>Unit 1, Lipsum<\/p><p>City, Co. County<\/p><p>Follow Us<\/p>",
+              "image_width": 100,
+              "show_social_icons": true,
+              "soc_icons_large": true
+            }
+          },
           "1601372771635": {
             "type": "newsletter",
             "settings": {
               "title": "Newsletter",
               "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
               "button_style": "primary",
-              "show_social_icons": true,
+              "show_social_icons": false,
               "soc_icons_large": false
             }
           }
@@ -1095,6 +1109,7 @@
         "block_order": [
           "1601372812538",
           "1601372709037",
+          "text_NKYJkD",
           "1601372771635"
         ],
         "settings": {
