@@ -40,7 +40,7 @@
               </div>
 
             {% when 'text' %}
-              <div class="section-footer__row__col section-footer__text-block {% if block.settings.text != blank %}section-footer__text-block--with-text{% endif %}" {{ block.shopify_attributes }}>
+              <div class="section-footer__row__col section-footer__text-block" {{ block.shopify_attributes }}>
                 {% if block.settings.title != blank %}
                   {%- assign title_word_count = block.settings.title | split: ' ' | size -%}
                   <h6 class="section-footer__title{% if title_word_count < 4 %} no-wrap{% endif %}">
@@ -50,7 +50,7 @@
 
                 {% if block.settings.text != blank %}
                   <div class="section-footer__text">
-                    {{- block.settings.text -}}
+                    {{ block.settings.text }}
                   </div>
                 {% endif %}
 
@@ -87,16 +87,20 @@
               <div class="section-footer__row__col section-footer__newsletter-block" {{ block.shopify_attributes }}>
                 {% if block.settings.title != blank %}
                   {%- assign title_word_count = block.settings.title | split: ' ' | size -%}
-                  <h6 class="section-footer__title{% if title_word_count < 4 %} no-wrap{% endif %}">
+                  <h6 class="section-footer__title section-footer__title-newsletter{% if title_word_count < 4 %} no-wrap{% endif %}">
                     {{- block.settings.title | escape -}}
                   </h6>
                 {% endif %}
 
                 {% if block.settings.text != blank %}
-                  <div class="section-footer__text">
+                  <div class="section-footer__text section-footer__text-newsletter">
                     {{ block.settings.text }}
                   </div>
                 {% endif %}
+
+                <div class="signup-form__label-newsletter">
+                  <label for="email">Email Address</label>
+                </div>
 
                 <div class="signup-form">
                   {% form 'customer'
@@ -116,18 +120,21 @@
                       <input
                         type="hidden"
                         name="contact[tags]"
+                        signup-form__button
                         value="prospect,newsletter" />
                       <p>
                         <input
                           type="email"
+                          {% comment %}
                           placeholder="{{ 'layout.signup.placeholder' | t }}"
-                          class="signup-form__email"
+                          {% endcomment %}
+                          class="signup-form__email-newsletter"
                           value=""
                           name="contact[email]"
                           aria-label="{{ 'layout.signup.input_label' | t | escape }}"
                           required />
                       </p>
-                      <button class="btn btn--{{ block.settings.button_style }} signup-form__button" type="submit">
+                      <button class="btn btn--{{ block.settings.button_style }} signup-form__button-newsletter" type="submit">
                         {{- 'layout.signup.submit' | t -}}
                       </button>
                     {% endif %}
