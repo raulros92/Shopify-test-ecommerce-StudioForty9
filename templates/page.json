@@ -1,1 +1,174 @@
-{"sections":{"main":{"type":"main-page","settings":{"full_width":false}}},"order":["main"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        "h1 {display: flex; color: var(--c-secondary); font-size: 60px; font-weight: 700;}",
+        "h4 {font-family: Circular TT; font-size: 20px; font-weight: 400; line-height: 32px; text-align: left;}",
+        "p {width: 750px; font-size: 16px; font-weight: 400; line-height: 25.6px; text-align: left; color: var(--c-text);}",
+        "h2 {font-size: 36px; font-weight: 700; line-height: 46.8px; text-align: left;}",
+        "img {width: 750px; height: 560px; gap: 0px; opacity: 0px;}"
+      ],
+      "settings": {
+        "full_width": true
+      }
+    },
+    "newsletter_Kr3jm8": {
+      "type": "newsletter",
+      "settings": {
+        "title": "join our Newsletter",
+        "subheading": "<p>Be the first to know about our offers, events &  new arrivals<\/p>",
+        "color_bg": "#ffffff",
+        "image_bg": "shopify:\/\/shop_images\/Newsletter_wallpaper.jpg"
+      }
+    },
+    "rich_text_tn9NiA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_E3KR6t": {
+          "type": "heading",
+          "settings": {
+            "title": "Quisque velit nisi-",
+            "use_h1": true
+          }
+        },
+        "subheading_fL8GrD": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "\"Pellentesque in ipsum id orci porta dapibus.\""
+          }
+        }
+      },
+      "block_order": [
+        "heading_E3KR6t",
+        "subheading_fL8GrD"
+      ],
+      "settings": {
+        "height": "small",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": true
+      }
+    },
+    "logo_list_TarXfd": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_er9fnT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/location_1.png",
+            "image_width": 60,
+            "link": "",
+            "title": "WE LOVE OUTDOORS",
+            "text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+          }
+        },
+        "logo_mwEaTq": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/planet-earth_1.png",
+            "image_width": 60,
+            "link": "",
+            "title": "SUSTAINABLE",
+            "text": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
+          }
+        },
+        "logo_7kAF4G": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/saint-patricks-day_1.png",
+            "image_width": 60,
+            "link": "",
+            "title": "BASED IN IRELAND",
+            "text": "Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur."
+          }
+        },
+        "logo_RbGq8W": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/knitting_1.png",
+            "image_width": 60,
+            "link": "",
+            "title": "SOMETHING",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          }
+        }
+      },
+      "block_order": [
+        "logo_er9fnT",
+        "logo_mwEaTq",
+        "logo_7kAF4G",
+        "logo_RbGq8W"
+      ],
+      "settings": {
+        "title": "",
+        "image_opacity": 100,
+        "use_alt_bg": true
+      }
+    },
+    "rich_text_Vh9Pg7": {
+      "type": "rich-text",
+      "blocks": {
+        "button_RbnFVK": {
+          "type": "button",
+          "settings": {
+            "button_label": "LEARN MORE",
+            "button_link": "",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "button_RbnFVK"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "use_alt_bg": true
+      }
+    },
+    "marketing_banner_nmiWa6": {
+      "type": "marketing-banner",
+      "blocks": {
+        "message_bryTVn": {
+          "type": "message",
+          "settings": {
+            "icon": "box",
+            "text": "28 day returns"
+          }
+        },
+        "message_BjkDVd": {
+          "type": "message",
+          "settings": {
+            "icon": "truck",
+            "text": "free delivery on orders over €40"
+          }
+        },
+        "message_xz4RhN": {
+          "type": "message",
+          "settings": {
+            "icon": "map_pin",
+            "text": "Irish Family Business Since 1984"
+          }
+        }
+      },
+      "block_order": [
+        "message_bryTVn",
+        "message_BjkDVd",
+        "message_xz4RhN"
+      ],
+      "settings": {
+        "background_color": "#004289"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter_Kr3jm8",
+    "rich_text_tn9NiA",
+    "logo_list_TarXfd",
+    "rich_text_Vh9Pg7",
+    "marketing_banner_nmiWa6"
+  ]
+}

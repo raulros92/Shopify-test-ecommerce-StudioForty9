@@ -1089,7 +1089,7 @@
             "type": "text",
             "settings": {
               "title": "Contact",
-              "text": "<p>Tel 012 3456789<\/p><p>E-mail: hello@domail.com<\/p><p>Lorem Ipsum Outdoor<\/p><p>Unit 1, Lipsum<\/p><p>City, Co. County<\/p><p>Follow Us<\/p>",
+              "text": "<p>Tel <strong>012 3456789<\/strong><\/p><p>E-mail: <strong>hello@domail.com<\/strong><\/p><p>Lorem Ipsum Outdoor<\/p><p>Unit 1, Lipsum<\/p><p>City, Co. County<\/p><p>Follow Us<\/p>",
               "image_width": 100,
               "show_social_icons": true,
               "soc_icons_large": true
@@ -1098,8 +1098,8 @@
           "1601372771635": {
             "type": "newsletter",
             "settings": {
-              "title": "Newsletter",
-              "text": "<p>Sign up for exclusive offers, original stories, events and more.<\/p>",
+              "title": "Join Our Newsletter",
+              "text": "<p>Be the first to know about Our offers, events, new arrivals & sales.<\/p>",
               "button_style": "primary",
               "show_social_icons": false,
               "soc_icons_large": false
