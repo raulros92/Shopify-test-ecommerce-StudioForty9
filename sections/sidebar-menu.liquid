@@ -1,0 +1,30 @@
+<div class="sidebar-menu">
+  <h3>{{ section.settings.sidebar_title }}</h3>
+  <ul>
+    {% for link in linklists['StudioForty9'].links %}
+      <li>
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% schema %}
+  {
+    "name": "Sidebar Menu",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sidebar_title",
+        "label": "Sidebar Title",
+        "default": "Sidebar"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Sidebar",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

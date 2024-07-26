@@ -13,13 +13,19 @@
         "full_width": true
       }
     },
+    "sidebar-menu": {
+      "type": "sidebar-menu",
+      "settings": {
+        "sidebar_title": "StudioForty9"
+      }
+    },
     "newsletter_Kr3jm8": {
       "type": "newsletter",
       "settings": {
         "title": "join our Newsletter",
-        "subheading": "<p>Be the first to know about our offers, events &  new arrivals<\/p>",
+        "subheading": "<p>Be the first to know about our offers, events & new arrivals</p>",
         "color_bg": "#ffffff",
-        "image_bg": "shopify:\/\/shop_images\/Newsletter_wallpaper.jpg"
+        "image_bg": "shopify://shop_images/Newsletter_wallpaper.jpg"
       }
     },
     "rich_text_tn9NiA": {
@@ -39,10 +45,7 @@
           }
         }
       },
-      "block_order": [
-        "heading_E3KR6t",
-        "subheading_fL8GrD"
-      ],
+      "block_order": ["heading_E3KR6t", "subheading_fL8GrD"],
       "settings": {
         "height": "small",
         "text_alignment": "center",
@@ -56,7 +59,7 @@
         "logo_er9fnT": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/location_1.png",
+            "image": "shopify://shop_images/location_1.png",
             "image_width": 60,
             "link": "",
             "title": "WE LOVE OUTDOORS",
@@ -66,7 +69,7 @@
         "logo_mwEaTq": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/planet-earth_1.png",
+            "image": "shopify://shop_images/planet-earth_1.png",
             "image_width": 60,
             "link": "",
             "title": "SUSTAINABLE",
@@ -76,7 +79,7 @@
         "logo_7kAF4G": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/saint-patricks-day_1.png",
+            "image": "shopify://shop_images/saint-patricks-day_1.png",
             "image_width": 60,
             "link": "",
             "title": "BASED IN IRELAND",
@@ -86,7 +89,7 @@
         "logo_RbGq8W": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/knitting_1.png",
+            "image": "shopify://shop_images/knitting_1.png",
             "image_width": 60,
             "link": "",
             "title": "SOMETHING",
@@ -118,9 +121,7 @@
           }
         }
       },
-      "block_order": [
-        "button_RbnFVK"
-      ],
+      "block_order": ["button_RbnFVK"],
       "settings": {
         "height": "medium",
         "text_alignment": "center",
@@ -153,11 +154,7 @@
           }
         }
       },
-      "block_order": [
-        "message_bryTVn",
-        "message_BjkDVd",
-        "message_xz4RhN"
-      ],
+      "block_order": ["message_bryTVn", "message_BjkDVd", "message_xz4RhN"],
       "settings": {
         "background_color": "#004289"
       }
@@ -165,6 +162,7 @@
   },
   "order": [
     "main",
+    "sidebar-menu",
     "newsletter_Kr3jm8",
     "rich_text_tn9NiA",
     "logo_list_TarXfd",

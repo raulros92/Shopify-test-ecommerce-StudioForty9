@@ -1166,6 +1166,161 @@
           "show_newsletter": true,
           "show_social_icons": true
         }
+      },
+      "main-page": {
+        "type": "main-page",
+        "custom_css": [
+          "h1 {display: flex; color: var(--c-secondary); font-size: 60px; font-weight: 700;}",
+          "h4 {font-family: Circular TT; font-size: 20px; font-weight: 400; line-height: 32px; text-align: left;}",
+          "p {width: 750px; font-size: 16px; font-weight: 400; line-height: 25.6px; text-align: left; color: var(--c-text);}",
+          "h2 {font-size: 36px; font-weight: 700; line-height: 46.8px; text-align: left;}",
+          "img {width: 750px; height: 560px; gap: 0px; opacity: 0px;}"
+        ],
+        "settings": {
+          "full_width": false
+        }
+      },
+      "sidebar-menu": {
+        "type": "sidebar-menu",
+        "settings": {
+          "sidebar_title": "Sidebar"
+        }
+      },
+      "newsletter": {
+        "type": "newsletter",
+        "settings": {
+          "title": "join our Newsletter",
+          "subheading": "<p>Be the first to know about our offers, events & new arrivals<\/p>",
+          "color_bg": "#ffffff",
+          "image_bg": "shopify:\/\/shop_images\/Newsletter_wallpaper.jpg"
+        }
+      },
+      "rich-text": {
+        "type": "rich-text",
+        "blocks": {
+          "heading_wEcWRj": {
+            "type": "heading",
+            "settings": {
+              "title": "Quisque velit nisi-",
+              "use_h1": true
+            }
+          },
+          "subheading_nKdVfX": {
+            "type": "subheading",
+            "settings": {
+              "subheading": "\"Pellentesque in ipsum id orci porta dapibus.\""
+            }
+          },
+          "button_UrLT4n": {
+            "type": "button",
+            "settings": {
+              "button_label": "Learn More",
+              "button_link": "shopify:\/\/products\/gift-card",
+              "button_style": "secondary"
+            }
+          }
+        },
+        "block_order": [
+          "heading_wEcWRj",
+          "subheading_nKdVfX",
+          "button_UrLT4n"
+        ],
+        "settings": {
+          "height": "medium",
+          "text_alignment": "center",
+          "full_width": false,
+          "use_alt_bg": true
+        }
+      },
+      "logo-list": {
+        "type": "logo-list",
+        "blocks": {
+          "logo_EERBHQ": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/location_1.png",
+              "image_width": 60,
+              "link": "",
+              "title": "WE LOVE OUTDOORS",
+              "text": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+            }
+          },
+          "logo_8MtXGG": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/planet-earth_1.png",
+              "image_width": 60,
+              "link": "",
+              "title": "SUSTAINABLE",
+              "text": "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum."
+            }
+          },
+          "logo_HCck9Y": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/saint-patricks-day_1.png",
+              "image_width": 60,
+              "link": "",
+              "title": "BASED IN IRELAND",
+              "text": "Sed posuere consectetur est at lobortis. Aenean lacinia bibendum nulla sed consectetur."
+            }
+          },
+          "logo_qea8wN": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/knitting_1.png",
+              "image_width": 60,
+              "link": "",
+              "title": "SOMETHING",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            }
+          }
+        },
+        "block_order": [
+          "logo_EERBHQ",
+          "logo_8MtXGG",
+          "logo_HCck9Y",
+          "logo_qea8wN"
+        ],
+        "settings": {
+          "title": "",
+          "image_opacity": 100,
+          "use_alt_bg": true
+        }
+      },
+      "marketing-banner": {
+        "type": "marketing-banner",
+        "blocks": {
+          "message_XBWHHN": {
+            "type": "message",
+            "settings": {
+              "icon": "box",
+              "text": "28 Days Return"
+            }
+          },
+          "message_8EBVLx": {
+            "type": "message",
+            "settings": {
+              "icon": "truck",
+              "text": "Free delivery in orders over €40"
+            }
+          },
+          "message_Q4GiCH": {
+            "type": "message",
+            "settings": {
+              "icon": "map_pin",
+              "text": "In business since 1977"
+            }
+          }
+        },
+        "block_order": [
+          "message_XBWHHN",
+          "message_8EBVLx",
+          "message_Q4GiCH"
+        ],
+        "settings": {
+          "background_color": "#004289"
+        }
       }
     },
     "content_for_index": [
