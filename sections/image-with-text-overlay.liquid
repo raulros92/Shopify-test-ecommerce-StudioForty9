@@ -1,30 +1,46 @@
 <div id="section-id-{{ section.id }}" data-section-type="image-with-text-overlay">
   {% style %}
     {%- if section.settings.height == 'fixed' -%}
-    #section-id-{{ section.id }} .fixed-height-item {
-      height: {{ section.settings.height_mobile }}px;
-    }
+      #section-id-{{ section.id }}
+      .fixed-height-item {
+        height: {{ section.settings.height_mobile }}px;
+      }
     {%- endif -%}
 
-    #section-id-{{ section.id }} .overlay-text__title {
+    #section-id-{{ section.id }}
+    .overlay-text__title {
       font-size: {{ section.settings.title_size_mobile }}px;
       {%- if section.settings.title_size_mobile >= 90 -%}
-      line-height: 1em;
+        line-height: 1em;
       {%- endif %}
+    }
+
+    #section-id-{{ section.id }}
+    .rimage-background-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 1;
     }
 
     @media (min-width: 768px) {
       {%- if section.settings.height == 'fixed' -%}
-      #section-id-{{ section.id }} .fixed-height-item {
-        height: {{ section.settings.height_desktop }}px;
-      }
+        #section-id-{{ section.id }}
+        .fixed-height-item {
+          height: {{ section.settings.height_desktop }}px;
+        }
       {%- endif -%}
 
-      #section-id-{{ section.id }} .overlay-text__title {
+      #section-id-{{ section.id }}
+      .overlay-text__title {
         {%- assign title_size_medium = section.settings.title_size | times: 0.7 | at_least: section.settings.title_size_mobile -%}
         font-size: {{ title_size_medium }}px;
         {%- if title_size_medium >= 90 -%}
-        line-height: 1em;
+          line-height: 1em;
         {%- endif %}
       }
     }
@@ -32,7 +48,7 @@
       #section-id-{{ section.id }} .overlay-text__title {
         font-size: {{ section.settings.title_size }}px;
         {%- if section.settings.title_size >= 90 -%}
-        line-height: 1em;
+          line-height: 1em;
         {%- endif %}
       }
     }
@@ -52,48 +68,67 @@
       assign wrap_image_with_link = true
     endif
   -%}
-  <div class="height--{{ section.settings.height }} image-overlay image-overlay--bg-{{ section.settings.overlay_style }} {% if section.settings.mobile_overlay_under %}overlay-text-parent--mobile-stack{% endif %}" data-cc-animate data-cc-animate-delay="0.2s">
+  <div
+    class="height--{{ section.settings.height }} image-overlay image-overlay--bg-{{ section.settings.overlay_style }} {% if section.settings.mobile_overlay_under %}overlay-text-parent--mobile-stack{% endif %}"
+    data-cc-animate
+    data-cc-animate-delay="0.2s">
     {%- if wrap_image_with_link -%}
       <a class="image-overlay__image-link" href="{{ section.settings.image_link }}">
     {%- endif -%}
 
     {%- if section.settings.image == blank -%}
-      <div class="placeholder-image placeholder--banner{% if show_overlay_text %} dark{% endif %}{% if section.settings.height == 'fixed' %} fixed-height-item{% endif %}" {% if section.settings.height == 'adapt' %}style="padding-top: 50%"{% endif %}>
+      <div
+        class="placeholder-image placeholder--banner{% if show_overlay_text %} dark{% endif %}{% if section.settings.height == 'fixed' %} fixed-height-item{% endif %}"
+        {% if section.settings.height == 'adapt' %}
+        style="padding-top: 50%"
+        {% endif %}>
         {% capture current %}{% cycle 1, 2 %}{% endcapture %}
         {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
       </div>
     {%- else -%}
       <div class="rimage-background-wrapper lazyload--placeholder {% if section.settings.mobile_image != blank %}desktop-only{% endif %}">
-        <div class="rimage-outer-wrapper rimage-background lazyload fade-in{% if section.settings.height == 'fixed' %} fixed-height-item{% endif %}"
-            data-bgset="{% render 'bgset', image: section.settings.image %}"
-            data-sizes="auto"
-            data-parent-fit="cover"
-            style="background-position: {{ section.settings.image_position }}">
+        <div
+          class="rimage-outer-wrapper rimage-background lazyload fade-in{% if section.settings.height == 'fixed' %} fixed-height-item{% endif %}"
+          data-bgset="{% render 'bgset', image: section.settings.image %}"
+          data-sizes="auto"
+          data-parent-fit="cover"
+          style="background-position: {{ section.settings.image_position }}">
           {%- if section.settings.height == 'adapt' -%}
             {%- assign aspect_ratio = section.settings.image.aspect_ratio | default: 2.0 -%}
             <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: aspect_ratio | times: 100 }}%"></div>
           {%- endif -%}
           <noscript>
             <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%">
-              <img src="{{ section.settings.image | img_url: '1024x1024' }}" alt="{{ section.settings.image.alt | escape }}" class="rimage__image">
+              <img
+                src="{{ section.settings.image | img_url: '1024x1024' }}"
+                alt="{{ section.settings.image.alt | escape }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                class="rimage__image">
             </div>
           </noscript>
         </div>
       </div>
 
       {% if section.settings.mobile_image != blank %}
-        <div class="rimage-outer-wrapper rimage-background lazyload mobile-only fade-in{% if section.settings.height == 'fixed' %} fixed-height-item{% endif %}"
-              data-bgset="{% render 'bgset', image: section.settings.mobile_image %}"
-              data-sizes="auto"
-              data-parent-fit="cover"
-              style="background-position: {{ section.settings.mobile_image_position }}">
+        <div
+          class="rimage-outer-wrapper rimage-background lazyload mobile-only fade-in{% if section.settings.height == 'fixed' %} fixed-height-item{% endif %}"
+          data-bgset="{% render 'bgset', image: section.settings.mobile_image %}"
+          data-sizes="auto"
+          data-parent-fit="cover"
+          style="background-position: {{ section.settings.mobile_image_position }}">
           {%- if section.settings.height == 'adapt' -%}
             {%- assign aspect_ratio = section.settings.mobile_image.aspect_ratio | default: 2.0 -%}
             <div class="rimage-wrapper THISONE" style="padding-top:{{ 1 | divided_by: aspect_ratio | times: 100 }}%"></div>
           {%- endif -%}
           <noscript>
             <div class="rimage-wrapper" style="padding-top:{{ 1 | divided_by: section.settings.mobile_image.aspect_ratio | times: 100 }}%">
-              <img src="{{ section.settings.mobile_image | img_url: '1024x1024' }}" alt="{{ section.settings.mobile_image.alt | escape }}" class="rimage__image">
+              <img
+                src="{{ section.settings.mobile_image | img_url: '1024x1024' }}"
+                alt="{{ section.settings.mobile_image.alt | escape }}"
+                width="{{ block.settings.image.width }}"
+                height="{{ block.settings.image.height }}"
+                class="rimage__image">
             </div>
           </noscript>
         </div>
@@ -189,24 +224,19 @@
           {
             "value": "center left",
             "label": "Middle left"
-          },
-          {
+          }, {
             "value": "center center",
             "label": "Middle center"
-          },
-          {
+          }, {
             "value": "center right",
             "label": "Middle right"
-          },
-          {
+          }, {
             "value": "bottom left",
             "label": "Bottom left"
-          },
-          {
+          }, {
             "value": "bottom center",
             "label": "Bottom center"
-          },
-          {
+          }, {
             "value": "bottom right",
             "label": "Bottom right"
           }
@@ -232,31 +262,25 @@
           {
             "value": "left center",
             "label": "Middle left"
-          },
-          {
+          }, {
             "value": "center center",
             "label": "Middle center"
-          },
-          {
+          }, {
             "value": "right center",
             "label": "Middle right"
-          },
-          {
+          }, {
             "value": "left bottom",
             "label": "Bottom left"
-          },
-          {
+          }, {
             "value": "center bottom",
             "label": "Bottom center"
-          },
-          {
+          }, {
             "value": "right bottom",
             "label": "Bottom right"
           }
         ],
         "default": "center center"
-      },
-      {
+      }, {
         "type": "radio",
         "id": "height",
         "label": "Image height",
@@ -264,19 +288,16 @@
           {
             "value": "adapt",
             "label": "Natural"
-          },
-          {
+          }, {
             "value": "full",
             "label": "Full screen"
-          },
-          {
+          }, {
             "value": "fixed",
             "label": "Fixed height"
           }
         ],
         "default": "fixed"
-      },
-      {
+      }, {
         "type": "range",
         "id": "height_desktop",
         "min": 200,
@@ -285,8 +306,7 @@
         "unit": "px",
         "label": "Desktop fixed height",
         "default": 600
-      },
-      {
+      }, {
         "type": "range",
         "id": "height_mobile",
         "min": 100,
@@ -295,26 +315,22 @@
         "unit": "px",
         "label": "Mobile fixed height",
         "default": 460
-      },
-      {
+      }, {
         "type": "url",
         "id": "image_link",
         "label": "Image link",
         "info": "Not used if buttons or text contain links"
-      },
-      {
+      }, {
         "type": "text",
         "id": "subheading",
         "label": "Subheading",
         "default": "Tell your story"
-      },
-      {
+      }, {
         "type": "textarea",
         "id": "title",
         "label": "Heading",
         "default": "Two line\ntext heading"
-      },
-      {
+      }, {
         "type": "range",
         "id": "title_size",
         "min": 20,
@@ -323,8 +339,7 @@
         "unit": "px",
         "label": "Desktop heading text size",
         "default": 84
-      },
-      {
+      }, {
         "type": "range",
         "id": "title_size_mobile",
         "min": 20,
@@ -333,49 +348,41 @@
         "unit": "px",
         "label": "Mobile heading text size",
         "default": 46
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "use_h1",
         "label": "Set as primary page heading",
         "info": "Use <h1> tag. One per page recommended. [Read more](https://cleancanvas.co.uk/support/symmetry/section-h1-setting)",
         "default": false
-      },
-      {
+      }, {
         "type": "richtext",
         "id": "text",
         "label": "Text",
         "default": "<p>And optional subtext</p>"
-      },
-      {
+      }, {
         "type": "checkbox",
         "id": "enlarge_text",
         "label": "Enlarge text",
         "default": true
-      },
-      {
+      }, {
         "type": "text",
         "id": "button_label_1",
         "label": "Button 1 label",
         "default": "Shop this"
-      },
-      {
+      }, {
         "type": "url",
         "id": "button_url_1",
         "label": "Button 1 link"
-      },
-      {
+      }, {
         "type": "text",
         "id": "button_label_2",
         "label": "Button 2 label",
         "default": "Shop all"
-      },
-      {
+      }, {
         "type": "url",
         "id": "button_url_2",
         "label": "Button 2 link"
-      },
-      {
+      }, {
         "type": "select",
         "id": "text_alignment",
         "label": "Text overlay position",
@@ -395,47 +402,38 @@
           {
             "value": "center left",
             "label": "Middle left"
-          },
-          {
+          }, {
             "value": "center center",
             "label": "Middle center"
-          },
-          {
+          }, {
             "value": "center right",
             "label": "Middle right"
-          },
-          {
+          }, {
             "value": "bottom left",
             "label": "Bottom left"
-          },
-          {
+          }, {
             "value": "bottom center",
             "label": "Bottom center"
-          },
-          {
+          }, {
             "value": "bottom right",
             "label": "Bottom right"
           }
         ],
         "default": "center center"
-      },
-      {
+      }, {
         "type": "header",
         "content": "Layout"
-      },
-      {
+      }, {
         "id": "full_width",
         "type": "checkbox",
         "label": "Full page width",
         "default": true
-      },
-      {
+      }, {
         "id": "mobile_overlay_under",
         "type": "checkbox",
         "label": "Show text below image on mobile",
         "default": false
-      },
-      {
+      }, {
         "id": "overlay_style",
         "type": "select",
         "label": "Overlay style",
@@ -456,8 +454,7 @@
           {
             "value": "full image-overlay--bg-shadow",
             "label": "Text shadow and tint"
-          },
-          {
+          }, {
             "value": "no_background",
             "label": "No background"
           }
@@ -467,8 +464,7 @@
     "presets": [
       {
         "name": "Image with text overlay",
-        "settings": {
-        }
+        "settings": {}
       }
     ]
   }
