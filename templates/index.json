@@ -159,7 +159,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Our Favourites",
-        "collection": "automated-collection",
+        "collection": "hydrogen",
         "show_vendor": true,
         "enable_carousel": true,
         "grid": 4,
